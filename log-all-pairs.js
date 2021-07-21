@@ -1,6 +1,7 @@
 
 // log all matching pairs in an array
 // this is O(n^2) note that we're using two for loops with different values (i and j) hence n^2
+// generally when nested for loops are O(n^2)
 
 const boxes = [3, 5, 10, 34, 6]
 const letters = ['a', 'b', 'c', 'd', 'e', 'f']
