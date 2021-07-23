@@ -24,18 +24,38 @@ target4 = 2
 array5 = [2]
 target5 = 15
 
+// BRUTEFORCE SOLUTION O(n^2)
+
+// function findSum(array, targetValue) {
+//     for (var i = 0; i < array.length; i++) {
+//         // this finds the number that we need as our second value
+//         const targetToFind = targetValue - array[i]
+//         for (var j = i + 1; j < array.length; j++) {
+//             // we're checking here if the targetToFind (calculated from the subtracting the targetValue inital indexs value )
+//             if(targetToFind === array[j]) {
+//                 return [i, j]
+//             }
+//         }
+//     } 
+//     return null // if no solution
+// } 
+
+// OPTIMIZED SOLUTION - utilizing a hash map
 
 function findSum(array, targetValue) {
+    const hashmap = {};
+    
     for (var i = 0; i < array.length; i++) {
-        // this finds the number that we need as our second value
-        const targetToFind = targetValue - array[i]
-        for (var j = i + 1; j <array.length; j++) {
-            if(targetToFind === array[j]) {
-                return [i, j]
-            }
+        const currentMapValue = hashmap[array[i]];
+        if (currentMapValue >= 0) {
+            return [currentMapValue, i]
+        } else {
+            const numberToFind = targetValue - array[i]
+            hashmap[numberToFind] = i
         }
-    } 
-    return null // if no solution
-} 
+    }
+    return null
+}
 
 
+console.log(findSum(array5, target5))
