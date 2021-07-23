@@ -40,12 +40,15 @@ target5 = 15
 //     return null // if no solution
 // } 
 
-// OPTIMIZED SOLUTION - utilizing a hash map
+// OPTIMIZED SOLUTION - utilizing a hash map O(n)
 
 function findSum(array, targetValue) {
     const hashmap = {};
     
     for (var i = 0; i < array.length; i++) {
+        // this sets the current currentMapValue to the index at which the element is within the array.
+        // on the initial pass since the the map is empty {} which in the if statement below will evaluate to undefined (a falsey value), which forces the else block
+
         const currentMapValue = hashmap[array[i]];
         if (currentMapValue >= 0) {
             return [currentMapValue, i]
