@@ -9,6 +9,7 @@
     // will a higher line within the container affect the area within the container?
 
 
+
     lineValues0 = [10, 1, 1, 1, 10]
 
     lineValues1 = []
@@ -19,12 +20,13 @@
 
     lineValues4 = [5, 5, 5, 5]
 
+    lineValues6 = [6, 9, 3, 4, 5, 8]
 
 
-
-    function containerWithMostWater(line) {
-
+    function containerWithMostWater(lines) {
+        // area = L x W
+        // L will be equal to the lines.length
+        // and width will be equal to the shorter of the two values
     }
 
     console.log(containerWithMostWater(lineValues2))
-    
