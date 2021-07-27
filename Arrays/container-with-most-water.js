@@ -23,7 +23,7 @@
     lineValues6 = [6, 9, 3, 4, 5, 8]
 
 
-    function containerWithMostWater(lines) {
+    function containerWithMostWater(heights) {
         // area = L x W
         // L will be equal to the lines.length
         // and width will be equal to the shorter of the two values
@@ -32,6 +32,19 @@
         // the resulting formula would look like this:
         // min(a, b) x (indexOf(b) - indexOf(a))
         // we'll need to calculate this for every pair because we need to find the largest possible outcome
+
+        let maxArea = 0
+
+        for (let i = 0; i < heights.length; i++) {
+            for (let j = i + 1; j < heights.length; j++) {
+                const height = Math.min(heights[i], heights[j])
+                const width = j - i
+                const area = width * height
+
+                maxArea = Math.max(maxArea, area)
+            }
+        }
+        return maxArea;
     }
 
     console.log(containerWithMostWater(lineValues2))
