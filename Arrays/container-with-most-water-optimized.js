@@ -33,23 +33,27 @@
         // min(a, b) x (indexOf(b) - indexOf(a))
         // we'll need to calculate this for every pair because we need to find the largest possible outcome
 
-   const getMaxWaterContainer = function (heights) {
+    const getMaxWaterContainer = function (heights) {
 
     let i = 0
     let j = heights.length - 1 
     let maxArea = 0;
 
-   while(i < j) {
-  const height = Math.min(heights[i], heights[j]);
-  const width = j - i;
-  const area = height * width;
-  maxArea = Math.max(maxArea, area);
-  
-  if(heights[i] <= heights[j]) {
-    i++;
-  } else {
-    j--;
-  }
+    while(i < j) {
+    // finds the shorter of the two line heights 
+    const height = Math.min(heights[i], heights[j]);
+    // finds the width 
+    const width = j - i;
+    const area = height * width;
+    // replaces maxArea with area if area is bigger then maxArea 
+    maxArea = Math.max(maxArea, area);
+    
+    // since we only care about the smaller of the two lines(since that will be the max height of the container), whatever one is larger of the two points will be moved inward one. 
+    if (heights[i] <= heights[j]) {
+        i++;
+    } else {
+        j--;
+    }
 }
 
 return maxArea;
