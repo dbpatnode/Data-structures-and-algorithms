@@ -18,6 +18,25 @@ const longestSubstring = function (string) {
     if(string.length <= 1) {
         return string.length;
     }
+    let longestString = 0
+
+    for (let p1 = 0; p1 < string.length; p1++) {
+        let seenCharacters = {}
+        currentLength = 0
+        
+        for(let p2 = p1; p2 < string.length; p2++) {
+            const currentCharacter = string[p2]
+            
+            if(!seenCharacters[currentCharacter]) {
+                currentLength++;
+                seenCharacters[currentCharacter] = true
+                longestString = Math.max(longestString, currentLength)
+            } else {
+                break;
+            }
+        }
+    }
+    return longestString
 }
 
 console.log(longestSubstring(string1))
