@@ -1,3 +1,11 @@
+// Given two strings S and T, return if they equal when both are typed out. Any '#' that appears in the string counts as a backspace
+
+// CONSTRAINTS
+    // what happens when two #s appear next to each other?
+    // what happens to # when there is no characters to to remove?
+    // are two empty strings equal to each other?
+    // is it case sensitive?
+
 const backspaceCompare = function(s,t) {
     let p1 = s.length - 1;
     let p2 = t.length - 1;
