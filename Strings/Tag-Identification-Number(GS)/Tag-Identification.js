@@ -1,9 +1,11 @@
-const string1 = '8111111111111111181111111111111111';
-const string2 = '1234567890987654321234567890987654321';
-const string3 = '0';
-const string4 = '';
-const string5 = '811';
-const string6 = '811111111111811111111111811111111111811111111111';
+// to run different cases switch out console log at bottom with different pools and  press control + option + N
+
+const pool1 = '8111111111111111181111111111111111';
+const pool2 = '1234567890987654321234567890987654321';
+const pool3 = '0';
+const pool4 = '';
+const pool5 = '811';
+const pool6 = '811111111111811111111111811111111111811111111111';
 
 const numOfIds = (pool) => {
   let eightCount = 0;
@@ -25,4 +27,4 @@ const numOfIds = (pool) => {
   }
 };
 
-console.log(numOfIds(pool1));
+console.log(numOfIds(pool3));
